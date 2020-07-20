@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class Pair<I, S> {
     private I first;
     private S second;
@@ -46,7 +44,7 @@ public class Pair<I, S> {
         Pair<I, S> pair = (Pair<I, S>) o;
 
         if ((first == pair.first && first == null)
-            && (second == pair.second && second == null)) {
+                && (second == pair.second && second == null)) {
             return true;
         }
 
