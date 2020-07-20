@@ -31,11 +31,27 @@ public class Pair<I, S> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Pair)) return false;
+        if (this == o) {
+            return true;
+        }
+
+        if (o == null) {
+            return false;
+        }
+
+        if (!(o instanceof Pair)) {
+            return false;
+        }
+
         Pair<I, S> pair = (Pair<I, S>) o;
-        return Objects.equals(first, pair.first) &&
-                Objects.equals(second, pair.second);
+
+        if ((first == pair.first && first == null)
+            && (second == pair.second && second == null)) {
+            return true;
+        }
+
+        return (first != null && first.equals(pair.first))
+                && (second != null && second.equals(pair.second));
     }
 
     @Override
